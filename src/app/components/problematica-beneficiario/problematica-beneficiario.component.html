@@ -1,0 +1,123 @@
+
+
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+
+  <body>
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+				<h1><a href="index.html" class="logo" style="text-align: center;">SIS <br> Pro</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <div class="footer">
+        	
+                <img src="../../../assets/images/dianita.png" class="img logo rounded-circle mb-5" width="220px" height="200px" style="padding: 0;" alt="IMG">
+                <p style="text-align: center;">Bienvenida <br> Diana Sanchez Torpoco</p>
+                
+            </div>
+
+          </li>
+
+          <li>
+
+        </li>
+          <li>
+            <a href="#"><span class="fa fa-cogs"></span> Configur<span style="font-size: 1em;">ación</span></a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-paper-plane"></span> Cerrar Sesion</a>
+          </li>
+          <li>
+
+            <a href="#"><span class="fa fa-user"></span> acerca de SISPRO</a>
+            
+        </li>
+        </ul>
+
+
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+
+                <h1>Problematicas</h1>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+
+    <div class="arrow">
+      
+            <ul>
+                <li *ngFor="let problematica of problematicas">
+                    <div class="card text-center">
+                        <div class="card-header">
+                           Codigo del beneficiario : {{problematica.codigo_beneficiario}}
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title">{{problematica.nombre}} {{problematica.apellidos}} De {{problematica.comunidad}} </h5>
+                            <p class="card-text">{{problematica.problematica}}.</p>
+                            <a href="#" class="btn btn-primary">Detalles</a>
+                          </div>
+                          <div class="card-footer text-muted">
+                           Fecha de publicación : {{problematica.fecha_publicacion}}                          
+                        </div>
+                    </div>
+
+                    
+                </li>
+            </ul>
+
+            
+        
+        </div>
+ 
+
+      
+      </div>
+</div>
+
+
+       
+
+
+    </body>
+
+
+
+
+
+<div class="container">
+    <h2>Problematicas</h2>
+    <ul>
+
+        <li *ngFor="let problematica of problematicas">
+            <h3>{{problematica.nombre}}</h3>
+            <p>{{problematica.apellidos}}</p> 
+            <p>{{problematica.problematica}}</p> 
+            <p>{{problematica.fecha_publicacion}}</p> 
+            <p>{{problematica.comunidad}}</p> 
+
+
+        </li>
+
+    </ul>
+
+</div>
