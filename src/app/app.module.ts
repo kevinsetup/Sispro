@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProblematicaBeneficiarioComponent } from './components/problematica-beneficiario/problematica-beneficiario.component';
+import { CreatePlanComponent } from './components/create-plan/create-plan.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProblematicaBeneficiarioComponent } from './components/problematica-ben
     LoginComponent,
     ProyectosComponent,
     MenuComponent,
-    ProblematicaBeneficiarioComponent
+    ProblematicaBeneficiarioComponent,
+    CreatePlanComponent
   ],
   imports: [
     BrowserModule,

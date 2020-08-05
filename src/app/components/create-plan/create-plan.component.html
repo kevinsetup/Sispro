@@ -1,0 +1,35 @@
+
+<div class="container">
+    <form #planForm="ngForm" (ngSubmit)="onSubmit(planForm)">
+        <p>
+            <label for="info_comunidad">Info comunidad Id</label>
+            <input type="text" name="info_comunidad" #info_comunidad_id="ngModel" [(ngModel)]="plan.info_comunidad_id">
+
+        </p>
+
+        <p>
+            <label for="carga_id">Carga id</label>
+            <input type="text" name="carga_id" #carga_id="ngModel" [(ngModel)]="plan.carga_id">
+
+        </p>
+        <p>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="plan.nombre">
+
+        </p>
+        <p>
+            <label for="presupuesto">Presupuesto</label>
+            <input type="text" name="presupuesto" #presupuesto="ngModel" [(ngModel)]="plan.presupuesto">
+
+        </p>
+
+
+        <input type="submit"  value="Enviar">
+
+
+
+    </form>
+
+
+
+</div>
