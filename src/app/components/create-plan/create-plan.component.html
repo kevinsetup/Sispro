@@ -1,35 +1,216 @@
 
-<div class="container">
-    <form #planForm="ngForm" (ngSubmit)="onSubmit(planForm)">
-        <p>
-            <label for="info_comunidad">Info comunidad Id</label>
-            <input type="text" name="info_comunidad" #info_comunidad_id="ngModel" [(ngModel)]="plan.info_comunidad_id">
-
-        </p>
-
-        <p>
-            <label for="carga_id">Carga id</label>
-            <input type="text" name="carga_id" #carga_id="ngModel" [(ngModel)]="plan.carga_id">
-
-        </p>
-        <p>
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="plan.nombre">
-
-        </p>
-        <p>
-            <label for="presupuesto">Presupuesto</label>
-            <input type="text" name="presupuesto" #presupuesto="ngModel" [(ngModel)]="plan.presupuesto">
-
-        </p>
-
-
-        <input type="submit"  value="Enviar">
 
 
 
-    </form>
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+
+  <body>
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+				<h1><a href="index.html" class="logo" style="text-align: center;">SIS <br> Pro</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <div class="footer">
+        	
+                <img src="../../../assets/images/dianita.png" class="img logo rounded-circle mb-5" width="220px" height="200px" style="padding: 0;" alt="IMG">
+                <p style="text-align: center;">Bienvenida <br> Diana Sanchez Torpoco</p>
+                
+            </div>
+
+          </li>
+
+          <li>
+
+        </li>
+          <li>
+            <a href="#"><span class="fa fa-cogs"></span> Configur<span style="font-size: 1em;">ación</span></a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-paper-plane"></span> Cerrar Sesion</a>
+          </li>
+          <li>
+
+            <a href="#"><span class="fa fa-user"></span> acerca de SISPRO</a>
+            
+        </li>
+        </ul>
+
+
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+
+                <h1>Solicitar Plan y Presupuesto</h1>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+
+        <form  #planForm="ngForm" (ngSubmit)="onSubmit(planForm)">
+            <div class="form-group">
+                
+                    <label for="info_comunidad">Info comunidad Id</label>
+                    <input type="text"  class="form-control" id="num2" name="info_comunidad" >
+                
+                    <div class="input-group mb-3">
+
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Problematica</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01"  #info_comunidad_id="ngModel" [(ngModel)]="plan.info_comunidad_id">
+                            <option selected >Seleccione</option>
+                            <option   *ngFor="let problematica of problematicas" [value]= "problematica.info_comunidad_id">
+                               {{problematica.info_comunidad_id}}
+                               - {{problematica.nombre}} {{problematica.apellidos}} - {{problematica.problematica}} 
+                                - {{problematica.comunidad}}
+                            </option>
+                    
+                        </select>
+                    </div>
+            </div>
+            <div class="form-group">
+                
+                    <label for="carga_id">Carga id</label>
+                    <input    class="form-control" type="text" id="num"  name="carga_id"      >
+                    <div class="input-group mb-3">
+<!--#carga_id="ngModel" [(ngModel)]="plan.carga_id" -->
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Carga academica</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect02" #carga_id="ngModel" [(ngModel)]="plan.carga_id" >
+                            <option selected >Seleccione</option>
+                            <option  *ngFor="let carga of cargas"  [value] = "carga.carga_id" >
+                                {{carga.carga_id}} 
+                               - {{carga.facultad}}/{{carga.ep}}  - {{carga.carrera}} 
+                               - {{carga.docente}} - Curso: {{carga.curso}} 
+                            - Plan: {{carga.plan}}</option>
+                    
+                        </select>
+                    </div>
+                
+
+            </div>
+
+            <div class="form-group">
+            
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="plan.nombre" >
+
+                
 
 
 
+
+            </div>
+            <div class="form-group">
+
+            
+                <label for="presupuesto">Presupuesto A solicitar</label>
+                <input type="text" class="form-control" name="presupuesto" #presupuesto="ngModel" [(ngModel)]="plan.presupuesto">
+
+            
+            </div>
+            
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+
+
+          </form>
+
+
+        <!--div class="container">
+            <form #planForm="ngForm" (ngSubmit)="onSubmit(planForm)">
+                <p>
+                    <label for="info_comunidad">Info comunidad Id</label>
+                    <input type="text" name="info_comunidad" #info_comunidad_id="ngModel" [(ngModel)]="plan.info_comunidad_id">
+
+                </p>
+
+                <p>
+                    <label for="carga_id">Carga id</label>
+                    <input type="text" name="carga_id" #carga_id="ngModel" [(ngModel)]="plan.carga_id">
+
+                </p>
+                <p>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="plan.nombre">
+
+                </p>
+                <p>
+                    <label for="presupuesto">Presupuesto</label>
+                    <input type="text" name="presupuesto" #presupuesto="ngModel" [(ngModel)]="plan.presupuesto">
+
+                </p>
+
+
+                <input type="submit"  value="Enviar">
+
+
+
+            </form>
+
+
+
+        </div-->
+ 
+ 
+
+      
+      </div>
 </div>
+
+       
+
+
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

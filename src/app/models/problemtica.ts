@@ -1,5 +1,6 @@
 export class Problematica{
     constructor(
+        public info_comunidad_id:number,
         public codigo_beneficiario:number,
         public nombre:string,
         public apellidos:string,

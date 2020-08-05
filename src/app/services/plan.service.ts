@@ -14,6 +14,17 @@ export class PlanService{
         this.url = Global.url;
 
     }
+    savePlan(plan:Plan): Observable<any>{
+        let params = JSON.stringify(plan);
+        let headers = new HttpHeaders().set('Content-Type','application/json');
 
-    
+        return this._http.post(this.url+'add',params,{headers:headers});
+    }
+    getCarga():Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+
+        return this._http.get(this.url+'carga',{headers:headers});
+    }
+
+
 }
