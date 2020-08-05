@@ -69,14 +69,16 @@
             <div class="form-group">
                 
                     <label for="info_comunidad">Info comunidad Id</label>
-                    <input type="text"  class="form-control" id="num2" name="info_comunidad" >
+                    <!-- input type="text"  class="form-control" id="num2" name="info_comunidad" -->
                 
                     <div class="input-group mb-3">
 
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Problematica</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01"  #info_comunidad_id="ngModel" [(ngModel)]="plan.info_comunidad_id">
+                        <select class="custom-select" id="inputGroupSelect01"  #info_comunidad_id="ngModel" [(ngModel)]="plan.info_comunidad_id"
+                        name="select2">
+
                             <option selected >Seleccione</option>
                             <option   *ngFor="let problematica of problematicas" [value]= "problematica.info_comunidad_id">
                                {{problematica.info_comunidad_id}}
@@ -90,13 +92,13 @@
             <div class="form-group">
                 
                     <label for="carga_id">Carga id</label>
-                    <input    class="form-control" type="text" id="num"  name="carga_id"      >
+                    <!--input    class="form-control" type="text" id="num"  name="carga_id"      -->
                     <div class="input-group mb-3">
 <!--#carga_id="ngModel" [(ngModel)]="plan.carga_id" -->
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Carga academica</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect02" #carga_id="ngModel" [(ngModel)]="plan.carga_id" >
+                        <select class="custom-select" id="inputGroupSelect02" #carga_id="ngModel" [(ngModel)]="plan.carga_id"  name="select1">
                             <option selected >Seleccione</option>
                             <option  *ngFor="let carga of cargas"  [value] = "carga.carga_id" >
                                 {{carga.carga_id}} 
